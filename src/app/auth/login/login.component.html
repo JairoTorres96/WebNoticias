@@ -3,7 +3,7 @@
       <div class="card">
         <div class="card-body">
           <h1 class="text-center">Login</h1>
-          <form>
+          <form  [formGroup]="loginform" (ngSubmit)="onLogin()">
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" class="form-control" formControlName="email" />
@@ -16,7 +16,7 @@
                 formControlName="password"
               />
             </div>
-            <button class="btn btn-primary btn-lg btn-block">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
               Login
             </button>
           </form>

@@ -1,3 +1,5 @@
+
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +12,8 @@ import { NavbarComponent } from './../shared/navbar/navbar.component';
   declarations: [HomeComponent, NavbarComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }
