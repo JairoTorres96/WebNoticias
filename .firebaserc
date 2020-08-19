@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "webnoticias-6d1ce": {
+      "hosting": {
+        "WebNoticias": [
+          "webnoticias-6d1ce"
+        ]
+      }
+    }
+  }
+}
