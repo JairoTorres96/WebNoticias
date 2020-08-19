@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import { AuthService } from './../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,13 +15,20 @@ export class RegisterComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl('')
   })
-  constructor(private authSvc:AuthService) { }
+  constructor(private authSvc:AuthService,private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  onRegister(){
+  async onRegister(){
     const {email, password} = this.registerform.value;
-    this.authSvc.register(email,password);
+    try {
+      const user = await this.authSvc.register(email,password);
+      if(user){
+        this.router.navigate(["/home"]);
+      }
+    } catch (error) {
+      
+    }
   }
 }
