@@ -1,3 +1,10 @@
+<div *ngIf="!canlogged" class="row" style="text-align: center;">
+  <div class="col-md-6 mx-auto mt-5">
+    <div class="alert alert-danger" role="alert">
+      {{msg}}
+    </div>
+  </div>
+</div>
 <div class="row">
     <div class="col-md-6 mx-auto mt-5">
       <div class="card">

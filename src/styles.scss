@@ -17,13 +17,13 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: var(--bambu);
+    color: #0c3c4a;
   }
   .Rectangle {
     width: 1360px;
     height: 80px;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-    background-color: var(--white);
+    background-color: #ffffff;
   }
 
   @media (min-width: 768px) {
@@ -34,5 +34,36 @@
             left: 18%;
             text-align: center;
         }
+    }
+    
+    .dropbox {
+      width: 200px;
+      height: 48px;
+      border-radius: 4px;
+      border: solid 1px #999999;
+    }
+
+    .btn-filtro {
+      width: 100px;
+      height: 48px;
+      border-radius: 4px;
+      border: solid 1px #999999;
+      color: #0c3c4a;
+      background-color: #ffffff;
+    }
+
+    .img-card{
+      width: 287px;
+      height: 192px;
+      border-top-left-radius: calc(.25rem - 1px);
+      border-top-right-radius: calc(.25rem - 1px);
+    }
+
+    .card-fondo {
+      width: 312px;
+      height: 350px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
     }
     

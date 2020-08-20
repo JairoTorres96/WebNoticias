@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   providers:[AuthService],
 })
 export class LoginComponent implements OnInit {
-
+  public canlogged = true;
+  public msg:string = '';
   loginform = new FormGroup({
     email: new FormControl(''),
     password: new FormControl('')
@@ -26,6 +27,9 @@ export class LoginComponent implements OnInit {
       const user = await this.authSvc.login(email,password);
       if(user){
         this.router.navigate(["/home"]);
+      }else{
+        this.canlogged= false;
+        this.msg ='No se pudo iniciar sesion valida tus credenciales.';
       }
     } catch (error) {
       

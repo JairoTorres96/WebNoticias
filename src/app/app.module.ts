@@ -1,3 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
+import { NewsServiceService } from './../app/services/news-service.service';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +12,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth'
 import { environment } from '../environments/environment';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +23,9 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [NewsServiceService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

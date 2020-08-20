@@ -1,8 +1,49 @@
 <app-navbar></app-navbar>
+<br>
 <div class="container">
     <div class="row">
         <div class="col col-12">
-            Hola!
+            <div class="row">
+                <div class="col col-sm-4">
+                    <select class="dropbox" name="slc_con" (change)="selectChangeHandlerCon($event)">
+                        <option value="0">Seleccion País</option>
+                        <option value="ar">Argentina</option>
+                        <option value="ca">Canada</option>
+                        <option value="co">Colombia</option>
+                        <option value="us">Estados Unidos</option>
+                        <option value="mx">México</option>
+                    </select>
+                </div>
+                <div class="col col-sm-4">
+                    <select class="dropbox" name="slc_cat" (change)="selectChangeHandlerCat($event)">
+                        <option value="0">Selecciona una Categoria</option>
+                        <option *ngIf="isselected" value="business">Negocios</option>
+                        <option *ngIf="isselected" value="entertainment">Entretenimiento</option>
+                        <option *ngIf="isselected" value="health">Salud</option>
+                        <option *ngIf="isselected" value="science">Ciencia</option>
+                        <option *ngIf="isselected" value="sports">Deportes</option>
+                        <option *ngIf="isselected" value="technology">Tecnologia</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div *ngFor="let article of mArticles">
+            <div class="col-sm-4 py-2">
+                <div class="card" style="width: 18rem;">
+                    <img class="img-card" src={{article.urlToImage}} alt="Card image cap">
+                    <div class="card card-body" style="height: 350px!important">
+                        <h5 class="card-title">{{article.title}}</h5>
+                        <h6>{{article.publishedAt | date }}</h6>
+                        <p class="card-text">{{article.description | slice:0:20}}...</p>
+                        <p>Por: {{article.author}}</p>
+                        <a href="{{article.url}}" target="_blank" class="btn btn-light btn-sm">Ir a la nota <i class="fa fa-external-link"></i></a>
+                    </div>
+                </div>
+            </div>
+            <br>
         </div>
     </div>
 </div>
